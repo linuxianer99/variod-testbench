@@ -14,7 +14,8 @@ VARIOD_PORT = 4353
 
 class NmeaGenerator:
 
-    """Abstract interface for NMEA generators."""
+    """
+    Abstract interface for NMEA generators."""
 
     def generate(self) -> Generator[str, None, None]:
         """Generate NMEA sentence (with the checksum)."""
@@ -91,8 +92,7 @@ class SensordSim:
         self.delay = delay
 
     def run(self) -> None:
-        """
-        Start sensor simulation.
+        """Start sensor simulation.
 
         Never finishes.
         """
