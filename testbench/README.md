@@ -96,3 +96,4 @@ nc -lp 4352
 
 One can also run the actual xcsoar command and configure the openvario device
 on port 4352.
+
