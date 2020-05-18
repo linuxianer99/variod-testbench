@@ -13,9 +13,7 @@ VARIOD_PORT = 4353
 
 
 class NmeaGenerator:
-
-    """
-    Abstract interface for NMEA generators."""
+    """Abstract interface for NMEA generators."""
 
     def generate(self) -> Generator[str, None, None]:
         """Generate NMEA sentence (with the checksum)."""
@@ -23,11 +21,10 @@ class NmeaGenerator:
 
 
 class FileGenerator(NmeaGenerator):
-
     """Generate arbitrary sentences by reading from the file."""
 
     def __init__(self, fname: str) -> None:
-        """Create file generator
+        """Create file generator.
 
         fname: file name to read.
         """
@@ -40,7 +37,6 @@ class FileGenerator(NmeaGenerator):
 
 
 class VarioSinGenerator(NmeaGenerator):
-
     """Synthesize sensord variometer readings.
 
     Iteratively go from minimum to maximum vario reading during given period
@@ -80,11 +76,11 @@ class VarioSinGenerator(NmeaGenerator):
 
 
 class SensordSim:
-
     """Sensor daemon simulator."""
 
     def __init__(self, nmea_gen: NmeaGenerator, delay: float) -> None:
-        """Create simulator
+        """Create simulator.
+        
         nmea_gen: NMEA sentence generator to use
         delay: delay between sentences in seconds
         """
